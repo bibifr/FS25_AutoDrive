@@ -128,6 +128,15 @@ function ADTrafficYieldModule.getName(vehicle)
     return "?"
 end
 
+-- sides to try when pulling over, in order: the driving side first, the other one as a last resort.
+-- Local +x is left in GIANTS, so right is negative x. Setting trafficYieldDriveSide: 1 = right-hand traffic, 2 = left-hand
+function ADTrafficYieldModule.getSides()
+    if AutoDrive.getSetting("trafficYieldDriveSide") == 2 then
+        return {{name = "left", sign = 1}, {name = "right", sign = -1}}
+    end
+    return {{name = "right", sign = -1}, {name = "left", sign = 1}}
+end
+
 function ADTrafficYieldModule.isEnabled()
     return AutoDrive.getSetting("trafficYieldEnabled") == true or AutoDrive.getSetting("trafficYieldEnabled") == 1
 end
@@ -807,7 +816,7 @@ function ADTrafficYieldModule:searchSpotAlongRoute(maxAhead, sideFilter)
     local pathLength = swerve + runOut + ADTrafficYieldModule.PATH_EXTRA
     local needed = swerve + runOut + parkerFront
     local laterals = {baseLateral, baseLateral + 1.0}
-    local sides = {{name = "right", sign = -1}, {name = "left", sign = 1}}
+    local sides = ADTrafficYieldModule.getSides()
 
     local lastX, py, lastZ = ADTrafficYieldModule.getPosition(parker)
     local roadY = getTerrainHeightAtWorldPos(g_currentMission.terrainRootNode, lastX, py, lastZ)
@@ -1697,7 +1706,7 @@ function ADTrafficYieldModule:searchParkingSpotStraight()
 
     -- local +x is left in GIANTS, so right side is negative x
     -- right side of the road first (local +x is left in GIANTS, right is negative x), left only as a last resort
-    local sides = {{name = "right", sign = -1}, {name = "left", sign = 1}}
+    local sides = ADTrafficYieldModule.getSides()
     local laterals = {baseLateral, baseLateral + 1.0, baseLateral + 2.0}
     -- first pass: spot outside the fields (grass strip), second pass: spot may overlap a field
     -- every option on the right (grass, then field) before any option on the left
@@ -2003,3 +2012,4 @@ function ADTrafficYieldModule:updateParkerPass(dt)
         self:endPlan("parker pass timeout", false)
     end
 end
+

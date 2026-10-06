@@ -417,5 +417,9 @@
 		<text name="AD_trafficYield_giveUp" text="ne peut pas croiser le véhicule en face, aucune place ni embranchement trouvé : intervention nécessaire" />
 		<text name="gui_ad_trafficYieldMargin" text="Marge de croisement" />
 		<text name="gui_ad_trafficYieldMargin_tooltip" text="Espace libre laissé entre les deux attelages quand ils se croisent (la place sur le bas-côté s'adapte à la largeur et à la longueur réelles des deux attelages)" />
+		<text name="gui_ad_trafficYieldDriveSide" text="Côté de circulation" />
+		<text name="gui_ad_trafficYieldDriveSide_tooltip" text="Côté où le véhicule qui cède se range en priorité : à droite pour la conduite à droite, à gauche pour la conduite à gauche (Royaume-Uni, Australie...). L'autre côté reste un dernier recours" />
+		<text name="gui_ad_trafficYieldDriveSide_right" text="Droite" />
+		<text name="gui_ad_trafficYieldDriveSide_left" text="Gauche" />
 	</texts>
 </l10n>

@@ -417,5 +417,9 @@
 		<text name="AD_trafficYield_giveUp" text="cannot pass the oncoming vehicle, no space and no junction found: please intervene" />
 		<text name="gui_ad_trafficYieldMargin" text="Passing clearance" />
 		<text name="gui_ad_trafficYieldMargin_tooltip" text="Free space left between both vehicle combinations when passing (the roadside spot adapts to the real width and length of both combinations)" />
+		<text name="gui_ad_trafficYieldDriveSide" text="Driving side" />
+		<text name="gui_ad_trafficYieldDriveSide_tooltip" text="Side where the yielding vehicle looks for a spot first: right for right-hand traffic, left for left-hand traffic (UK, Australia...). The other side is only used as a last resort" />
+		<text name="gui_ad_trafficYieldDriveSide_right" text="Right" />
+		<text name="gui_ad_trafficYieldDriveSide_left" text="Left" />
 </texts>
 </l10n>

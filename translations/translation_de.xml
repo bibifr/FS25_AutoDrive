@@ -417,5 +417,9 @@
 		<text name="AD_trafficYield_giveUp" text="kann dem entgegenkommenden Fahrzeug nicht ausweichen, kein Platz und keine Abzweigung gefunden: bitte eingreifen" />
 		<text name="gui_ad_trafficYieldMargin" text="Abstand beim Ausweichen" />
 		<text name="gui_ad_trafficYieldMargin_tooltip" text="Freier Abstand zwischen den beiden Gespannen beim Vorbeifahren (der Platz am Straßenrand passt sich an die tatsächliche Breite und Länge beider Gespanne an)" />
+		<text name="gui_ad_trafficYieldDriveSide" text="Fahrseite" />
+		<text name="gui_ad_trafficYieldDriveSide_tooltip" text="Seite, auf der das ausweichende Fahrzeug zuerst einen Platz sucht: rechts bei Rechtsverkehr, links bei Linksverkehr (Großbritannien, Australien...). Die andere Seite bleibt der letzte Ausweg" />
+		<text name="gui_ad_trafficYieldDriveSide_right" text="Rechts" />
+		<text name="gui_ad_trafficYieldDriveSide_left" text="Links" />
 	</texts>
 </l10n>
